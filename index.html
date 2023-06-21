@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Q1. What are promises and why do we need them?</h3>
+    <p>Ans:-   Promise are use to handle async operation in JS. easy to handle callback hell, also use to handle the error.
+        basically in promise there are Three stage</p>
+
+        <ol type="1">
+            <li> Pending -  initial stage of any promise is always pending.</li>
+            <li> Resolve - (then method)</li>
+            <li> reject - (catch mentod)</li>
+        </ol>
+
+        <pre> var promise=new Promise(function(resolve, reject){
+            let a = "tokyo"
+            let b = "tokyo"
+            if(a===b){
+                resolve();
+            }
+            else{
+                reject();
+            }
+        });
+        promise.then(()=>{
+            console.log("my promise is resolved");
+        })
+        .catch(()=>{
+            console.log("my promise is rejected")
+        })// output resolved
+    </pre>
+    
+   
+
+        <h3>Q2. What is promise chaining</h3>
+        <p>Ans:- Promise chaining is a technique in JavaScript to execute multiple asynchronous operations in a specific order by chaining promises together using the then method
+             Multiple .then method.</p>
+             <pre>
+                const pro=(num)=>{
+                    return new Promise((resolve,rej)=>{
+                        setTimeout(()=>{
+                            console.log(num);
+                            resolve();
+                        },1000)
+                    });
+                }
+                pro(1)
+                .then(()=>pro(2))
+                .then(()=>pro(3))
+                .then(()=>pro(4))
+                .then(()=>pro(5));</pre>
+        <h3>Q3.What is the DOM? </h3>
+        <p>Ans:- Document object model. basically it is javascript mechanism by which we can change the document structure, style, and content.Different method in DOM</p>
+              <ul>
+                <li>Id - getElementById - return unique value</li>
+                <li> querySelector -       return unique value </li>
+                <li> Class - getElementsByClassName </li>
+                <li> tag Name - getElementsByTagName</li>
+                <li>querySelectorAll </li>
+                <li> addEventListener - (event, callback function)</li>
+              </ul>
+              <p>The addEventListener() method attaches an event handler to a document.</p>
+        <h3>Q4. What are closures? Give an example of closure</h3>
+        <p> Ans:- A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).Closure is the combination of two function (min).</p>
+        <pre>function outer(){
+            let a = 10
+            function inner(){
+                return "Hello"
+            }
+            return inner;
+        }
+        
+        let res = outer();
+        console.log(res());</pre>
+        <h3>Q5. How many operators do we have in JS ?</h3>
+          <ol type="1">
+            <li>Arithemic operator</li>
+             <ul>
+                <li> 1. Add, Sub, Multi, Div(/), Module (%), Expontial (**), increment ++, decrement--</li>
+             </ul>
+            <li>Assigment Operators</li>
+            <ul>
+                <li> 1. Assign (=), Add Assign (+=), Sub Assign (-=), (*=), (/=), (%=)</li>
+            </ul>
+            <li>Bitwise Operators</li>
+            <ul>
+                <li> Bitwise OR (|), Bitwise AND (&), Bitwise NOT (~), Left shift (<<), right shift(>>)</li>
+            </ul>
+            <li>Comparision Operator</li>
+            <ul>
+                <li>equal (==), strict equal (===), Not equal (!=), Strict Not equal (!==), greate than, less than, greate than equal, less than equal</li>
+            </ul>
+            <li>Logical Operator</li>
+            <ul>
+                <li>AND (&&)</li>
+                <li>OR (||)</li>
+                <li>Not (!)</li>
+
+            </ul>
+            <li>Ternary Operator</li>
+            <ul>
+                <li>(Condition) ? "Execute True Condition" : "Execute False Condition"</li>
+            </ul>
+            <li>Type of Operator</li>
+            <ul>
+                <li> return datatype</li>
+            </ul>
+          </ol>
+        <h3>Q6. What are objects in javascript?</h3>
+              <ul>
+                <li>Non-premitive data type</li>
+                <li>store date in the form of Key-Value pair saparated by colon.</li>
+                <li>Key - Properties : Value </li>
+
+              </ul>
+    
+</body>
+      <script src="./script.js"></script>
+</html>
